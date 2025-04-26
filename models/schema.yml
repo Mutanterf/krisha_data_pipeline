@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_data         
+    schema: public           
+    tables:
+      - name: raw_flats
+
+models:
+  - name: raw_data
+    description: "Pull in raw_flats and drop null prices"
+  - name: transform_data
+    description: "Filter out bad prices"
+  - name: final_model
+    description: "Final cleaned flats"

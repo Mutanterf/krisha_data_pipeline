@@ -1,0 +1,11 @@
+krisha_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      pass: Mika2u7w
+      port: 5432
+      dbname: krisha_data
+      schema: public

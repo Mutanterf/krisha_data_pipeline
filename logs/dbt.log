@@ -1,0 +1,1826 @@
+[0m16:06:31.620827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B612D8580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B63360EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B63360D00>]}
+
+
+============================== 16:06:31.622835 | 40935f3e-0a84-439c-8ff4-3b5dca6cc754 ==============================
+[0m16:06:31.622835 [info ] [MainThread]: Running with dbt=1.9.4
+[0m16:06:31.623836 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:06:31.766334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B5F8F6F10>]}
+[0m16:06:31.809394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B633219A0>]}
+[0m16:06:31.810395 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:06:31.964059 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m16:06:31.965064 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:06:31.965992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B6333B790>]}
+[0m16:06:32.924687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B63B55130>]}
+[0m16:06:32.993676 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:06:32.997669 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:06:33.009811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B63B6E310>]}
+[0m16:06:33.009811 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m16:06:33.010804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B64BA1C70>]}
+[0m16:06:33.011805 [info ] [MainThread]: 
+[0m16:06:33.011805 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:06:33.012805 [info ] [MainThread]: 
+[0m16:06:33.013805 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:06:33.018809 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m16:06:33.067932 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m16:06:33.068928 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:06:33.068928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:06:33.098296 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.029 seconds
+[0m16:06:33.099360 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m16:06:33.100364 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_krisha_data, now create_krisha_data_public_public)
+[0m16:06:33.101297 [debug] [ThreadPool]: Creating schema "database: "krisha_data"
+schema: "public_public"
+"
+[0m16:06:33.105359 [debug] [ThreadPool]: Using postgres connection "create_krisha_data_public_public"
+[0m16:06:33.106363 [debug] [ThreadPool]: On create_krisha_data_public_public: BEGIN
+[0m16:06:33.106363 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:06:33.134334 [debug] [ThreadPool]: SQL status: BEGIN in 0.028 seconds
+[0m16:06:33.134334 [debug] [ThreadPool]: Using postgres connection "create_krisha_data_public_public"
+[0m16:06:33.135339 [debug] [ThreadPool]: On create_krisha_data_public_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "create_krisha_data_public_public"} */
+create schema if not exists "public_public"
+[0m16:06:33.136333 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.001 seconds
+[0m16:06:33.137333 [debug] [ThreadPool]: On create_krisha_data_public_public: COMMIT
+[0m16:06:33.138340 [debug] [ThreadPool]: Using postgres connection "create_krisha_data_public_public"
+[0m16:06:33.138340 [debug] [ThreadPool]: On create_krisha_data_public_public: COMMIT
+[0m16:06:33.139333 [debug] [ThreadPool]: SQL status: COMMIT in 0.000 seconds
+[0m16:06:33.139333 [debug] [ThreadPool]: On create_krisha_data_public_public: Close
+[0m16:06:33.140343 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public_public'
+[0m16:06:33.145657 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:06:33.146657 [debug] [ThreadPool]: On list_krisha_data_public_public: BEGIN
+[0m16:06:33.146657 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:06:33.181211 [debug] [ThreadPool]: SQL status: BEGIN in 0.034 seconds
+[0m16:06:33.181211 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:06:33.182281 [debug] [ThreadPool]: On list_krisha_data_public_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_public'
+  
+[0m16:06:33.184210 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.002 seconds
+[0m16:06:33.185278 [debug] [ThreadPool]: On list_krisha_data_public_public: ROLLBACK
+[0m16:06:33.186278 [debug] [ThreadPool]: On list_krisha_data_public_public: Close
+[0m16:06:33.189664 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.190725 [debug] [MainThread]: On master: BEGIN
+[0m16:06:33.190725 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:06:33.217416 [debug] [MainThread]: SQL status: BEGIN in 0.026 seconds
+[0m16:06:33.217416 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.218486 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m16:06:33.221725 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:06:33.222730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B64C75E80>]}
+[0m16:06:33.223730 [debug] [MainThread]: On master: ROLLBACK
+[0m16:06:33.223730 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.224729 [debug] [MainThread]: On master: BEGIN
+[0m16:06:33.224729 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m16:06:33.225729 [debug] [MainThread]: On master: COMMIT
+[0m16:06:33.225729 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.225729 [debug] [MainThread]: On master: COMMIT
+[0m16:06:33.226730 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:06:33.226730 [debug] [MainThread]: On master: Close
+[0m16:06:33.229729 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m16:06:33.230739 [info ] [Thread-1  ]: 1 of 3 START sql table model public_public.raw_data ............................ [RUN]
+[0m16:06:33.231732 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m16:06:33.231732 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m16:06:33.238830 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m16:06:33.239829 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m16:06:33.269946 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m16:06:33.272943 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:06:33.272943 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m16:06:33.273942 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m16:06:33.305514 [debug] [Thread-1  ]: SQL status: BEGIN in 0.032 seconds
+[0m16:06:33.306515 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:06:33.306515 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- просто читаем данные из Postgres
+select *
+from "your_db_name"."public"."raw_flats"
+  );
+  
+[0m16:06:33.308508 [debug] [Thread-1  ]: Postgres adapter: Postgres error: ОШИБКА:  ссылки между базами не реализованы: "your_db_name.public.raw_flats"
+LINE 16: from "your_db_name"."public"."raw_flats"
+              ^
+
+[0m16:06:33.309514 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: ROLLBACK
+[0m16:06:33.309514 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m16:06:33.312515 [debug] [Thread-1  ]: Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ссылки между базами не реализованы: "your_db_name.public.raw_flats"
+  LINE 16: from "your_db_name"."public"."raw_flats"
+                ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql
+[0m16:06:33.314512 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '40935f3e-0a84-439c-8ff4-3b5dca6cc754', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B650E0C40>]}
+[0m16:06:33.314512 [error] [Thread-1  ]: 1 of 3 ERROR creating sql table model public_public.raw_data ................... [[31mERROR[0m in 0.08s]
+[0m16:06:33.315508 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m16:06:33.316525 [debug] [Thread-7  ]: Marking all children of 'model.krisha_data_pipeline.raw_data' to be skipped because of status 'error'.  Reason: Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ссылки между базами не реализованы: "your_db_name.public.raw_flats"
+  LINE 16: from "your_db_name"."public"."raw_flats"
+                ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql.
+[0m16:06:33.317538 [debug] [Thread-3  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m16:06:33.317538 [info ] [Thread-3  ]: 2 of 3 SKIP relation public_public.transform_data .............................. [[33mSKIP[0m]
+[0m16:06:33.318550 [debug] [Thread-3  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m16:06:33.318550 [debug] [Thread-2  ]: Began running node model.krisha_data_pipeline.final_model
+[0m16:06:33.319539 [info ] [Thread-2  ]: 3 of 3 SKIP relation public_public.final_model ................................. [[33mSKIP[0m]
+[0m16:06:33.319539 [debug] [Thread-2  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m16:06:33.321549 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.321549 [debug] [MainThread]: On master: BEGIN
+[0m16:06:33.321549 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:06:33.351027 [debug] [MainThread]: SQL status: BEGIN in 0.029 seconds
+[0m16:06:33.352040 [debug] [MainThread]: On master: COMMIT
+[0m16:06:33.352040 [debug] [MainThread]: Using postgres connection "master"
+[0m16:06:33.353039 [debug] [MainThread]: On master: COMMIT
+[0m16:06:33.353039 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:06:33.354037 [debug] [MainThread]: On master: Close
+[0m16:06:33.354037 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:06:33.355027 [debug] [MainThread]: Connection 'create_krisha_data_public_public' was properly closed.
+[0m16:06:33.355027 [debug] [MainThread]: Connection 'list_krisha_data_public_public' was properly closed.
+[0m16:06:33.355027 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.raw_data' was properly closed.
+[0m16:06:33.356027 [info ] [MainThread]: 
+[0m16:06:33.356027 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m16:06:33.357026 [debug] [MainThread]: Command end result
+[0m16:06:33.375627 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:06:33.377701 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:06:33.382712 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m16:06:33.383707 [info ] [MainThread]: 
+[0m16:06:33.383707 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m16:06:33.384720 [info ] [MainThread]: 
+[0m16:06:33.385701 [error] [MainThread]:   Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ссылки между базами не реализованы: "your_db_name.public.raw_flats"
+  LINE 16: from "your_db_name"."public"."raw_flats"
+                ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql
+[0m16:06:33.385701 [info ] [MainThread]: 
+[0m16:06:33.386713 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=2 TOTAL=3
+[0m16:06:33.387701 [debug] [MainThread]: Command `dbt run` failed at 16:06:33.387701 after 1.82 seconds
+[0m16:06:33.387701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B612D8580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B633219A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014B615F59D0>]}
+[0m16:06:33.388702 [debug] [MainThread]: Flushing usage events
+[0m16:06:34.268398 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:09:49.558609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AC018520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE092BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE092EB0>]}
+
+
+============================== 16:09:49.561609 | b49629d0-cc3d-4160-a67f-7fa53c9f1576 ==============================
+[0m16:09:49.561609 [info ] [MainThread]: Running with dbt=1.9.4
+[0m16:09:49.562114 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:09:49.717408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE198340>]}
+[0m16:09:49.761529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216ADEF3160>]}
+[0m16:09:49.762529 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:09:49.922007 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m16:09:50.037311 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m16:09:50.038312 [debug] [MainThread]: Partial parsing: updated file: krisha_data_pipeline://models\schema.yml
+[0m16:09:50.429507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AAFAC070>]}
+[0m16:09:50.498435 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:09:50.502449 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:09:50.517672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE1F7AC0>]}
+[0m16:09:50.518614 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m16:09:50.519280 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE1EEB80>]}
+[0m16:09:50.520640 [info ] [MainThread]: 
+[0m16:09:50.521843 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:09:50.523191 [info ] [MainThread]: 
+[0m16:09:50.523982 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:09:50.529053 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m16:09:50.591257 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m16:09:50.592259 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:09:50.592809 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:09:50.628390 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.035 seconds
+[0m16:09:50.630401 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m16:09:50.632685 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public_public'
+[0m16:09:50.639687 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:09:50.640197 [debug] [ThreadPool]: On list_krisha_data_public_public: BEGIN
+[0m16:09:50.640686 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:09:50.675488 [debug] [ThreadPool]: SQL status: BEGIN in 0.035 seconds
+[0m16:09:50.676477 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:09:50.676477 [debug] [ThreadPool]: On list_krisha_data_public_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_public'
+  
+[0m16:09:50.680817 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.004 seconds
+[0m16:09:50.683445 [debug] [ThreadPool]: On list_krisha_data_public_public: ROLLBACK
+[0m16:09:50.683445 [debug] [ThreadPool]: On list_krisha_data_public_public: Close
+[0m16:09:50.689445 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:50.690448 [debug] [MainThread]: On master: BEGIN
+[0m16:09:50.690448 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:09:50.722749 [debug] [MainThread]: SQL status: BEGIN in 0.032 seconds
+[0m16:09:50.723741 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:50.723741 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m16:09:50.727867 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:09:50.728874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AFC0EC10>]}
+[0m16:09:50.729874 [debug] [MainThread]: On master: ROLLBACK
+[0m16:09:50.730865 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:50.731575 [debug] [MainThread]: On master: BEGIN
+[0m16:09:50.731643 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m16:09:50.731643 [debug] [MainThread]: On master: COMMIT
+[0m16:09:50.732649 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:50.732649 [debug] [MainThread]: On master: COMMIT
+[0m16:09:50.733649 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:09:50.733649 [debug] [MainThread]: On master: Close
+[0m16:09:50.737108 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m16:09:50.738115 [info ] [Thread-1  ]: 1 of 3 START sql table model public_public.raw_data ............................ [RUN]
+[0m16:09:50.738780 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m16:09:50.738780 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m16:09:50.747064 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.748070 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m16:09:50.789212 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.790220 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.791210 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m16:09:50.791210 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m16:09:50.821563 [debug] [Thread-1  ]: SQL status: BEGIN in 0.030 seconds
+[0m16:09:50.821563 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.822554 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- просто читаем данные из Postgres
+select *
+from "krisha_data"."public"."raw_flats"
+  );
+  
+[0m16:09:50.826560 [debug] [Thread-1  ]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:09:50.834560 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.835560 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public_public"."raw_data__dbt_tmp" rename to "raw_data"
+[0m16:09:50.835560 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:09:50.847553 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m16:09:50.847553 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.848553 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m16:09:50.848553 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m16:09:50.854718 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public_public"."raw_data__dbt_backup"
+[0m16:09:50.859717 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:09:50.860719 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+drop table if exists "krisha_data"."public_public"."raw_data__dbt_backup" cascade
+[0m16:09:50.861723 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m16:09:50.864710 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m16:09:50.866819 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AA5F0D30>]}
+[0m16:09:50.867825 [info ] [Thread-1  ]: 1 of 3 OK created sql table model public_public.raw_data ....................... [[32mSELECT 0[0m in 0.13s]
+[0m16:09:50.868813 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m16:09:50.868813 [debug] [Thread-3  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m16:09:50.869822 [info ] [Thread-3  ]: 2 of 3 START sql table model public_public.transform_data ...................... [RUN]
+[0m16:09:50.870813 [debug] [Thread-3  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.transform_data'
+[0m16:09:50.870813 [debug] [Thread-3  ]: Began compiling node model.krisha_data_pipeline.transform_data
+[0m16:09:50.873813 [debug] [Thread-3  ]: Writing injected SQL for node "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.874819 [debug] [Thread-3  ]: Began executing node model.krisha_data_pipeline.transform_data
+[0m16:09:50.877819 [debug] [Thread-3  ]: Writing runtime sql for node "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.878820 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.879820 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: BEGIN
+[0m16:09:50.879969 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m16:09:50.909932 [debug] [Thread-3  ]: SQL status: BEGIN in 0.030 seconds
+[0m16:09:50.909932 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.910930 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."transform_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  *
+from "krisha_data"."public_public"."raw_data"
+where price is not null
+  );
+  
+[0m16:09:50.914919 [debug] [Thread-3  ]: SQL status: SELECT 0 in 0.004 seconds
+[0m16:09:50.918997 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.918997 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public_public"."transform_data__dbt_tmp" rename to "transform_data"
+[0m16:09:50.919996 [debug] [Thread-3  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:09:50.920946 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m16:09:50.921997 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.921997 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m16:09:50.922923 [debug] [Thread-3  ]: SQL status: COMMIT in 0.000 seconds
+[0m16:09:50.924998 [debug] [Thread-3  ]: Applying DROP to: "krisha_data"."public_public"."transform_data__dbt_backup"
+[0m16:09:50.926016 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:09:50.926016 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+drop table if exists "krisha_data"."public_public"."transform_data__dbt_backup" cascade
+[0m16:09:50.926923 [debug] [Thread-3  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m16:09:50.928041 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: Close
+[0m16:09:50.929089 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AFC50580>]}
+[0m16:09:50.929901 [info ] [Thread-3  ]: 2 of 3 OK created sql table model public_public.transform_data ................. [[32mSELECT 0[0m in 0.06s]
+[0m16:09:50.930667 [debug] [Thread-3  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m16:09:50.930667 [debug] [Thread-2  ]: Began running node model.krisha_data_pipeline.final_model
+[0m16:09:50.931688 [info ] [Thread-2  ]: 3 of 3 START sql table model public_public.final_model ......................... [RUN]
+[0m16:09:50.932702 [debug] [Thread-2  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.final_model'
+[0m16:09:50.932702 [debug] [Thread-2  ]: Began compiling node model.krisha_data_pipeline.final_model
+[0m16:09:50.935750 [debug] [Thread-2  ]: Writing injected SQL for node "model.krisha_data_pipeline.final_model"
+[0m16:09:50.936752 [debug] [Thread-2  ]: Began executing node model.krisha_data_pipeline.final_model
+[0m16:09:50.939747 [debug] [Thread-2  ]: Writing runtime sql for node "model.krisha_data_pipeline.final_model"
+[0m16:09:50.939747 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:09:50.940758 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: BEGIN
+[0m16:09:50.940758 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m16:09:50.971611 [debug] [Thread-2  ]: SQL status: BEGIN in 0.030 seconds
+[0m16:09:50.971611 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:09:50.972680 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."final_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  name,
+  rooms,
+  sqm,
+  price,
+  city,
+  date,
+  year_of_est
+from "krisha_data"."public_public"."transform_data"
+order by price desc
+  );
+  
+[0m16:09:50.976777 [debug] [Thread-2  ]: SQL status: SELECT 0 in 0.004 seconds
+[0m16:09:50.980865 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:09:50.980865 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public_public"."final_model__dbt_tmp" rename to "final_model"
+[0m16:09:50.981840 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:09:50.982866 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m16:09:50.983864 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:09:50.983864 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m16:09:50.984987 [debug] [Thread-2  ]: SQL status: COMMIT in 0.000 seconds
+[0m16:09:50.987054 [debug] [Thread-2  ]: Applying DROP to: "krisha_data"."public_public"."final_model__dbt_backup"
+[0m16:09:50.988057 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:09:50.988057 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+drop table if exists "krisha_data"."public_public"."final_model__dbt_backup" cascade
+[0m16:09:50.988993 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m16:09:50.990100 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: Close
+[0m16:09:50.990100 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b49629d0-cc3d-4160-a67f-7fa53c9f1576', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AC3870A0>]}
+[0m16:09:50.991401 [info ] [Thread-2  ]: 3 of 3 OK created sql table model public_public.final_model .................... [[32mSELECT 0[0m in 0.06s]
+[0m16:09:50.992060 [debug] [Thread-2  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m16:09:50.993479 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:50.993479 [debug] [MainThread]: On master: BEGIN
+[0m16:09:50.993479 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:09:51.020943 [debug] [MainThread]: SQL status: BEGIN in 0.027 seconds
+[0m16:09:51.021924 [debug] [MainThread]: On master: COMMIT
+[0m16:09:51.021924 [debug] [MainThread]: Using postgres connection "master"
+[0m16:09:51.021924 [debug] [MainThread]: On master: COMMIT
+[0m16:09:51.022971 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:09:51.022971 [debug] [MainThread]: On master: Close
+[0m16:09:51.023972 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:09:51.023972 [debug] [MainThread]: Connection 'list_krisha_data' was properly closed.
+[0m16:09:51.024972 [debug] [MainThread]: Connection 'list_krisha_data_public_public' was properly closed.
+[0m16:09:51.025216 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.raw_data' was properly closed.
+[0m16:09:51.025750 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.transform_data' was properly closed.
+[0m16:09:51.025750 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.final_model' was properly closed.
+[0m16:09:51.025750 [info ] [MainThread]: 
+[0m16:09:51.026797 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.50 seconds (0.50s).
+[0m16:09:51.027796 [debug] [MainThread]: Command end result
+[0m16:09:51.043794 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:09:51.045795 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:09:51.051794 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m16:09:51.052806 [info ] [MainThread]: 
+[0m16:09:51.053884 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:09:51.054385 [info ] [MainThread]: 
+[0m16:09:51.055108 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m16:09:51.056158 [debug] [MainThread]: Command `dbt run` succeeded at 16:09:51.056158 after 1.55 seconds
+[0m16:09:51.056158 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AC018520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216ABA1B790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216AE054520>]}
+[0m16:09:51.057158 [debug] [MainThread]: Flushing usage events
+[0m16:09:51.897173 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:15:26.251454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179743884C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017976410FA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017976410DF0>]}
+
+
+============================== 16:15:26.254503 | 00262d86-cdbc-4885-8125-e902cf04c661 ==============================
+[0m16:15:26.254503 [info ] [MainThread]: Running with dbt=1.9.4
+[0m16:15:26.255845 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'profiles_dir': 'C:\\krisha_data_pipeline', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:15:26.398192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179763EC9D0>]}
+[0m16:15:26.449547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179763E39A0>]}
+[0m16:15:26.450547 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:15:26.608012 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m16:15:26.686213 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:15:26.686213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017975D74640>]}
+[0m16:15:27.603811 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.krisha_data_pipeline.marts.final_model
+[0m16:15:27.613887 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017976C91130>]}
+[0m16:15:27.676987 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:15:27.681055 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:15:27.694148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017977C87FA0>]}
+[0m16:15:27.694148 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m16:15:27.695594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017977C874F0>]}
+[0m16:15:27.696756 [info ] [MainThread]: 
+[0m16:15:27.697684 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:15:27.697684 [info ] [MainThread]: 
+[0m16:15:27.698839 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m16:15:27.703256 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m16:15:27.753160 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m16:15:27.754163 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m16:15:27.754163 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:15:27.783071 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.029 seconds
+[0m16:15:27.784065 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m16:15:27.786065 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public_public'
+[0m16:15:27.791206 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:15:27.791206 [debug] [ThreadPool]: On list_krisha_data_public_public: BEGIN
+[0m16:15:27.792065 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:15:27.817073 [debug] [ThreadPool]: SQL status: BEGIN in 0.025 seconds
+[0m16:15:27.818065 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public_public"
+[0m16:15:27.818065 [debug] [ThreadPool]: On list_krisha_data_public_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_public'
+  
+[0m16:15:27.821074 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m16:15:27.822066 [debug] [ThreadPool]: On list_krisha_data_public_public: ROLLBACK
+[0m16:15:27.822066 [debug] [ThreadPool]: On list_krisha_data_public_public: Close
+[0m16:15:27.826911 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:27.827909 [debug] [MainThread]: On master: BEGIN
+[0m16:15:27.827909 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:15:27.854011 [debug] [MainThread]: SQL status: BEGIN in 0.026 seconds
+[0m16:15:27.854011 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:27.855088 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m16:15:27.859069 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:15:27.860079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001797325BB80>]}
+[0m16:15:27.860079 [debug] [MainThread]: On master: ROLLBACK
+[0m16:15:27.861076 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:27.861076 [debug] [MainThread]: On master: BEGIN
+[0m16:15:27.862068 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m16:15:27.862068 [debug] [MainThread]: On master: COMMIT
+[0m16:15:27.862068 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:27.863069 [debug] [MainThread]: On master: COMMIT
+[0m16:15:27.863069 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:15:27.863615 [debug] [MainThread]: On master: Close
+[0m16:15:27.866630 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m16:15:27.866630 [info ] [Thread-1  ]: 1 of 3 START sql table model public_public.raw_data ............................ [RUN]
+[0m16:15:27.868146 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m16:15:27.868146 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m16:15:27.875156 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.876156 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m16:15:27.951527 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.952528 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.952528 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m16:15:27.953520 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m16:15:27.978564 [debug] [Thread-1  ]: SQL status: BEGIN in 0.025 seconds
+[0m16:15:27.979558 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.979558 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+-- просто читаем данные из Postgres
+select *
+from "krisha_data"."public"."raw_flats"
+  );
+  
+[0m16:15:27.982911 [debug] [Thread-1  ]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:15:27.990905 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.990905 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public_public"."raw_data" rename to "raw_data__dbt_backup"
+[0m16:15:27.991907 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:27.994906 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:27.995663 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public_public"."raw_data__dbt_tmp" rename to "raw_data"
+[0m16:15:27.995663 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:28.008689 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m16:15:28.009690 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:28.009690 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m16:15:28.010689 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m16:15:28.016690 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public_public"."raw_data__dbt_backup"
+[0m16:15:28.019690 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m16:15:28.020690 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+drop table if exists "krisha_data"."public_public"."raw_data__dbt_backup" cascade
+[0m16:15:28.024690 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.004 seconds
+[0m16:15:28.026690 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m16:15:28.028691 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179780CF6A0>]}
+[0m16:15:28.028977 [info ] [Thread-1  ]: 1 of 3 OK created sql table model public_public.raw_data ....................... [[32mSELECT 0[0m in 0.16s]
+[0m16:15:28.030438 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m16:15:28.030438 [debug] [Thread-3  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m16:15:28.031528 [info ] [Thread-3  ]: 2 of 3 START sql table model public_public.transform_data ...................... [RUN]
+[0m16:15:28.032482 [debug] [Thread-3  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.transform_data'
+[0m16:15:28.032482 [debug] [Thread-3  ]: Began compiling node model.krisha_data_pipeline.transform_data
+[0m16:15:28.035540 [debug] [Thread-3  ]: Writing injected SQL for node "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.036466 [debug] [Thread-3  ]: Began executing node model.krisha_data_pipeline.transform_data
+[0m16:15:28.039473 [debug] [Thread-3  ]: Writing runtime sql for node "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.039473 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.040466 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: BEGIN
+[0m16:15:28.040466 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m16:15:28.070628 [debug] [Thread-3  ]: SQL status: BEGIN in 0.030 seconds
+[0m16:15:28.070628 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.071620 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."transform_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  *
+from "krisha_data"."public_public"."raw_data"
+where price is not null
+  );
+  
+[0m16:15:28.076906 [debug] [Thread-3  ]: SQL status: SELECT 0 in 0.004 seconds
+[0m16:15:28.081932 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.082930 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public_public"."transform_data" rename to "transform_data__dbt_backup"
+[0m16:15:28.083930 [debug] [Thread-3  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:28.085929 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.086922 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public_public"."transform_data__dbt_tmp" rename to "transform_data"
+[0m16:15:28.087923 [debug] [Thread-3  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:28.088929 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m16:15:28.089922 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.089922 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m16:15:28.090921 [debug] [Thread-3  ]: SQL status: COMMIT in 0.001 seconds
+[0m16:15:28.092929 [debug] [Thread-3  ]: Applying DROP to: "krisha_data"."public_public"."transform_data__dbt_backup"
+[0m16:15:28.093922 [debug] [Thread-3  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m16:15:28.093922 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+drop table if exists "krisha_data"."public_public"."transform_data__dbt_backup" cascade
+[0m16:15:28.095929 [debug] [Thread-3  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m16:15:28.096929 [debug] [Thread-3  ]: On model.krisha_data_pipeline.transform_data: Close
+[0m16:15:28.097923 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001797427F9D0>]}
+[0m16:15:28.098929 [info ] [Thread-3  ]: 2 of 3 OK created sql table model public_public.transform_data ................. [[32mSELECT 0[0m in 0.07s]
+[0m16:15:28.099712 [debug] [Thread-3  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m16:15:28.099712 [debug] [Thread-2  ]: Began running node model.krisha_data_pipeline.final_model
+[0m16:15:28.100793 [info ] [Thread-2  ]: 3 of 3 START sql table model public_public.final_model ......................... [RUN]
+[0m16:15:28.101784 [debug] [Thread-2  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.final_model'
+[0m16:15:28.101784 [debug] [Thread-2  ]: Began compiling node model.krisha_data_pipeline.final_model
+[0m16:15:28.104791 [debug] [Thread-2  ]: Writing injected SQL for node "model.krisha_data_pipeline.final_model"
+[0m16:15:28.106184 [debug] [Thread-2  ]: Began executing node model.krisha_data_pipeline.final_model
+[0m16:15:28.110248 [debug] [Thread-2  ]: Writing runtime sql for node "model.krisha_data_pipeline.final_model"
+[0m16:15:28.111239 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.111239 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: BEGIN
+[0m16:15:28.111239 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m16:15:28.143737 [debug] [Thread-2  ]: SQL status: BEGIN in 0.032 seconds
+[0m16:15:28.144723 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.145731 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+
+  
+    
+
+  create  table "krisha_data"."public_public"."final_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+select
+  name,
+  rooms,
+  sqm,
+  price,
+  city,
+  date,
+  year_of_est
+from "krisha_data"."public_public"."transform_data"
+order by price desc
+  );
+  
+[0m16:15:28.148797 [debug] [Thread-2  ]: SQL status: SELECT 0 in 0.003 seconds
+[0m16:15:28.152618 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.153623 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public_public"."final_model" rename to "final_model__dbt_backup"
+[0m16:15:28.154611 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:28.157683 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.157683 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public_public"."final_model__dbt_tmp" rename to "final_model"
+[0m16:15:28.158675 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m16:15:28.160683 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m16:15:28.161682 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.161682 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m16:15:28.162675 [debug] [Thread-2  ]: SQL status: COMMIT in 0.000 seconds
+[0m16:15:28.164684 [debug] [Thread-2  ]: Applying DROP to: "krisha_data"."public_public"."final_model__dbt_backup"
+[0m16:15:28.165682 [debug] [Thread-2  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m16:15:28.165682 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+drop table if exists "krisha_data"."public_public"."final_model__dbt_backup" cascade
+[0m16:15:28.168064 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m16:15:28.169061 [debug] [Thread-2  ]: On model.krisha_data_pipeline.final_model: Close
+[0m16:15:28.170055 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00262d86-cdbc-4885-8125-e902cf04c661', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179780E8370>]}
+[0m16:15:28.171063 [info ] [Thread-2  ]: 3 of 3 OK created sql table model public_public.final_model .................... [[32mSELECT 0[0m in 0.07s]
+[0m16:15:28.172078 [debug] [Thread-2  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m16:15:28.173093 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:28.173093 [debug] [MainThread]: On master: BEGIN
+[0m16:15:28.173093 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:15:28.207232 [debug] [MainThread]: SQL status: BEGIN in 0.033 seconds
+[0m16:15:28.207232 [debug] [MainThread]: On master: COMMIT
+[0m16:15:28.207232 [debug] [MainThread]: Using postgres connection "master"
+[0m16:15:28.208232 [debug] [MainThread]: On master: COMMIT
+[0m16:15:28.208232 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m16:15:28.209232 [debug] [MainThread]: On master: Close
+[0m16:15:28.209232 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:15:28.210232 [debug] [MainThread]: Connection 'list_krisha_data' was properly closed.
+[0m16:15:28.210232 [debug] [MainThread]: Connection 'list_krisha_data_public_public' was properly closed.
+[0m16:15:28.210232 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.raw_data' was properly closed.
+[0m16:15:28.211185 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.transform_data' was properly closed.
+[0m16:15:28.211283 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.final_model' was properly closed.
+[0m16:15:28.211283 [info ] [MainThread]: 
+[0m16:15:28.212323 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.51 seconds (0.51s).
+[0m16:15:28.213314 [debug] [MainThread]: Command end result
+[0m16:15:28.232120 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m16:15:28.234060 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m16:15:28.239806 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m16:15:28.239806 [info ] [MainThread]: 
+[0m16:15:28.240848 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:15:28.241842 [info ] [MainThread]: 
+[0m16:15:28.241842 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m16:15:28.242843 [debug] [MainThread]: Command `dbt run` succeeded at 16:15:28.242843 after 2.04 seconds
+[0m16:15:28.243843 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000179743884C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017977C8FC70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017977C8F4F0>]}
+[0m16:15:28.244285 [debug] [MainThread]: Flushing usage events
+[0m16:15:29.062314 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:30:42.084425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4E9C48580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EBCD0F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EBCD0D60>]}
+
+
+============================== 16:30:42.087482 | e872df3f-4466-410a-9502-4eb3d8ff5b79 ==============================
+[0m16:30:42.087482 [info ] [MainThread]: Running with dbt=1.9.4
+[0m16:30:42.088482 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'profiles_dir': 'C:\\krisha_data_pipeline', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:30:42.237160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e872df3f-4466-410a-9502-4eb3d8ff5b79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4E8265F10>]}
+[0m16:30:42.284628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e872df3f-4466-410a-9502-4eb3d8ff5b79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EB61A4C0>]}
+[0m16:30:42.285629 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:30:42.456027 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m16:30:42.538007 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:30:42.538007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e872df3f-4466-410a-9502-4eb3d8ff5b79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EB640B80>]}
+[0m16:30:43.273726 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.krisha_data_pipeline.raw_data' (models\raw_data.sql) depends on a node named 'raw_flats' which was not found
+[0m16:30:43.274798 [debug] [MainThread]: Command `dbt run` failed at 16:30:43.274798 after 1.24 seconds
+[0m16:30:43.275724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4E9C48580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EC327820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4EC363CA0>]}
+[0m16:30:43.275724 [debug] [MainThread]: Flushing usage events
+[0m16:30:44.081049 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:53:13.286429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5B078520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5D110F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5D110DC0>]}
+
+
+============================== 16:53:13.289552 | b1db35ff-72c0-4e10-9e2b-84fd6071cfbf ==============================
+[0m16:53:13.289552 [info ] [MainThread]: Running with dbt=1.9.4
+[0m16:53:13.290610 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:53:13.429544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b1db35ff-72c0-4e10-9e2b-84fd6071cfbf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5D19FAC0>]}
+[0m16:53:13.473693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b1db35ff-72c0-4e10-9e2b-84fd6071cfbf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5CA98E20>]}
+[0m16:53:13.474693 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m16:53:13.630650 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m16:53:13.706651 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m16:53:13.707650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b1db35ff-72c0-4e10-9e2b-84fd6071cfbf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5CA643A0>]}
+[0m16:53:14.421089 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.krisha_data_pipeline.raw_data' (models\raw_data.sql) depends on a node named 'raw_flats' which was not found
+[0m16:53:14.422082 [debug] [MainThread]: Command `dbt run` failed at 16:53:14.422082 after 1.19 seconds
+[0m16:53:14.422082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5B078520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5D7677F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B5D7A3C70>]}
+[0m16:53:14.423082 [debug] [MainThread]: Flushing usage events
+[0m16:53:15.284129 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:06:25.497436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3ECE89580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EEF0FF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EEF0FD60>]}
+
+
+============================== 17:06:25.500435 | 7465bc6e-c6d2-4b28-a5f8-ec795c328f29 ==============================
+[0m17:06:25.500435 [info ] [MainThread]: Running with dbt=1.9.4
+[0m17:06:25.501435 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:06:25.646927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EEFFA1F0>]}
+[0m17:06:25.693406 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EF086130>]}
+[0m17:06:25.694411 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m17:06:25.869615 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m17:06:25.949618 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m17:06:25.950618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EE880B80>]}
+[0m17:06:26.741001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EF5D4130>]}
+[0m17:06:26.792983 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:06:26.796990 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:06:26.810343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EF628F40>]}
+[0m17:06:26.810343 [info ] [MainThread]: Found 3 models, 433 macros
+[0m17:06:26.811354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EF5A5D30>]}
+[0m17:06:26.812369 [info ] [MainThread]: 
+[0m17:06:26.813385 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:06:26.813385 [info ] [MainThread]: 
+[0m17:06:26.814378 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:06:26.819386 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m17:06:26.877799 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m17:06:26.877799 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:06:26.878791 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:06:26.908499 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.029 seconds
+[0m17:06:26.909499 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m17:06:26.910492 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public'
+[0m17:06:26.916494 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:06:26.916494 [debug] [ThreadPool]: On list_krisha_data_public: BEGIN
+[0m17:06:26.917495 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:06:26.943640 [debug] [ThreadPool]: SQL status: BEGIN in 0.027 seconds
+[0m17:06:26.944639 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:06:26.944639 [debug] [ThreadPool]: On list_krisha_data_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m17:06:26.947711 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.002 seconds
+[0m17:06:26.949719 [debug] [ThreadPool]: On list_krisha_data_public: ROLLBACK
+[0m17:06:26.949719 [debug] [ThreadPool]: On list_krisha_data_public: Close
+[0m17:06:26.954722 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:26.954722 [debug] [MainThread]: On master: BEGIN
+[0m17:06:26.955722 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:06:26.986103 [debug] [MainThread]: SQL status: BEGIN in 0.030 seconds
+[0m17:06:26.986103 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:26.987096 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m17:06:26.990102 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m17:06:26.992177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EB3B08B0>]}
+[0m17:06:26.992177 [debug] [MainThread]: On master: ROLLBACK
+[0m17:06:26.993224 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:26.993224 [debug] [MainThread]: On master: BEGIN
+[0m17:06:26.994215 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m17:06:26.994215 [debug] [MainThread]: On master: COMMIT
+[0m17:06:26.995215 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:26.995708 [debug] [MainThread]: On master: COMMIT
+[0m17:06:26.995708 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:06:26.995708 [debug] [MainThread]: On master: Close
+[0m17:06:26.998767 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m17:06:26.999785 [info ] [Thread-1  ]: 1 of 3 START sql table model public.raw_data ................................... [RUN]
+[0m17:06:26.999785 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m17:06:27.000800 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m17:06:27.006799 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m17:06:27.007970 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m17:06:27.040090 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m17:06:27.041091 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:06:27.042091 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m17:06:27.042091 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:06:27.070167 [debug] [Thread-1  ]: SQL status: BEGIN in 0.027 seconds
+[0m17:06:27.070167 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:06:27.071165 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/raw_data.sql
+select * 
+from raw_flats
+where price is not null;
+  );
+  
+[0m17:06:27.072165 [debug] [Thread-1  ]: Postgres adapter: Postgres error: ОШИБКА:  ошибка синтаксиса (примерное положение: ";")
+LINE 15: where price is not null;
+                                ^
+
+[0m17:06:27.072165 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: ROLLBACK
+[0m17:06:27.073168 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m17:06:27.075170 [debug] [Thread-1  ]: Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ошибка синтаксиса (примерное положение: ";")
+  LINE 15: where price is not null;
+                                  ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql
+[0m17:06:27.077169 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7465bc6e-c6d2-4b28-a5f8-ec795c328f29', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3ECD7FEE0>]}
+[0m17:06:27.078169 [error] [Thread-1  ]: 1 of 3 ERROR creating sql table model public.raw_data .......................... [[31mERROR[0m in 0.08s]
+[0m17:06:27.079209 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m17:06:27.079209 [debug] [Thread-4  ]: Marking all children of 'model.krisha_data_pipeline.raw_data' to be skipped because of status 'error'.  Reason: Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ошибка синтаксиса (примерное положение: ";")
+  LINE 15: where price is not null;
+                                  ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql.
+[0m17:06:27.080226 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m17:06:27.081217 [info ] [Thread-1  ]: 2 of 3 SKIP relation public.transform_data ..................................... [[33mSKIP[0m]
+[0m17:06:27.081217 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m17:06:27.082218 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.final_model
+[0m17:06:27.082218 [info ] [Thread-1  ]: 3 of 3 SKIP relation public.final_model ........................................ [[33mSKIP[0m]
+[0m17:06:27.083217 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m17:06:27.084920 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:27.085494 [debug] [MainThread]: On master: BEGIN
+[0m17:06:27.086075 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:06:27.114685 [debug] [MainThread]: SQL status: BEGIN in 0.029 seconds
+[0m17:06:27.114685 [debug] [MainThread]: On master: COMMIT
+[0m17:06:27.115788 [debug] [MainThread]: Using postgres connection "master"
+[0m17:06:27.116287 [debug] [MainThread]: On master: COMMIT
+[0m17:06:27.116287 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:06:27.117330 [debug] [MainThread]: On master: Close
+[0m17:06:27.117330 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:06:27.118326 [debug] [MainThread]: Connection 'list_krisha_data' was properly closed.
+[0m17:06:27.118326 [debug] [MainThread]: Connection 'list_krisha_data_public' was properly closed.
+[0m17:06:27.118326 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.raw_data' was properly closed.
+[0m17:06:27.119326 [info ] [MainThread]: 
+[0m17:06:27.119326 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m17:06:27.120327 [debug] [MainThread]: Command end result
+[0m17:06:27.140299 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:06:27.142292 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:06:27.149606 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m17:06:27.149606 [info ] [MainThread]: 
+[0m17:06:27.150858 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m17:06:27.150858 [info ] [MainThread]: 
+[0m17:06:27.151880 [error] [MainThread]:   Database Error in model raw_data (models\raw_data.sql)
+  ОШИБКА:  ошибка синтаксиса (примерное положение: ";")
+  LINE 15: where price is not null;
+                                  ^
+  compiled code at target\run\krisha_data_pipeline\models\raw_data.sql
+[0m17:06:27.152881 [info ] [MainThread]: 
+[0m17:06:27.153881 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=2 TOTAL=3
+[0m17:06:27.154887 [debug] [MainThread]: Command `dbt run` failed at 17:06:27.153881 after 1.71 seconds
+[0m17:06:27.154887 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3ECE89580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3EF086130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A3ED1A59D0>]}
+[0m17:06:27.154887 [debug] [MainThread]: Flushing usage events
+[0m17:06:28.067404 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:16:18.430588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB69F495B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6BFD0BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6BFD0F40>]}
+
+
+============================== 17:16:18.434229 | ad28c036-f154-436f-95e5-41e5d29e67bd ==============================
+[0m17:16:18.434229 [info ] [MainThread]: Running with dbt=1.9.4
+[0m17:16:18.435238 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:18.597124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB68565F10>]}
+[0m17:16:18.647274 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6B381490>]}
+[0m17:16:18.648274 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m17:16:18.827826 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m17:16:18.929126 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 3 files changed.
+[0m17:16:18.930127 [debug] [MainThread]: Partial parsing: added file: krisha_data_pipeline://models\schema.yml
+[0m17:16:18.930127 [debug] [MainThread]: Partial parsing: updated file: krisha_data_pipeline://models\final_model.sql
+[0m17:16:18.931314 [debug] [MainThread]: Partial parsing: updated file: krisha_data_pipeline://models\transform_data.sql
+[0m17:16:18.931314 [debug] [MainThread]: Partial parsing: updated file: krisha_data_pipeline://models\raw_data.sql
+[0m17:16:19.305460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6C1102B0>]}
+[0m17:16:19.371621 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:16:19.375622 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:16:19.387682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6C57B2E0>]}
+[0m17:16:19.388619 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m17:16:19.389618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6C527250>]}
+[0m17:16:19.390626 [info ] [MainThread]: 
+[0m17:16:19.391619 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:16:19.391619 [info ] [MainThread]: 
+[0m17:16:19.392619 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:16:19.397219 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m17:16:19.446666 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m17:16:19.446666 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:16:19.447656 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:16:19.477624 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.030 seconds
+[0m17:16:19.479111 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m17:16:19.480128 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public'
+[0m17:16:19.485771 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:16:19.486780 [debug] [ThreadPool]: On list_krisha_data_public: BEGIN
+[0m17:16:19.486780 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:16:19.514080 [debug] [ThreadPool]: SQL status: BEGIN in 0.028 seconds
+[0m17:16:19.515098 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:16:19.515098 [debug] [ThreadPool]: On list_krisha_data_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m17:16:19.518117 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.003 seconds
+[0m17:16:19.519130 [debug] [ThreadPool]: On list_krisha_data_public: ROLLBACK
+[0m17:16:19.520324 [debug] [ThreadPool]: On list_krisha_data_public: Close
+[0m17:16:19.524177 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.525178 [debug] [MainThread]: On master: BEGIN
+[0m17:16:19.525178 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:16:19.560385 [debug] [MainThread]: SQL status: BEGIN in 0.035 seconds
+[0m17:16:19.561398 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.562037 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m17:16:19.565108 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m17:16:19.566140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6BF8E610>]}
+[0m17:16:19.567147 [debug] [MainThread]: On master: ROLLBACK
+[0m17:16:19.567147 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.568139 [debug] [MainThread]: On master: BEGIN
+[0m17:16:19.568139 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m17:16:19.569151 [debug] [MainThread]: On master: COMMIT
+[0m17:16:19.569773 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.569773 [debug] [MainThread]: On master: COMMIT
+[0m17:16:19.569773 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:19.570796 [debug] [MainThread]: On master: Close
+[0m17:16:19.572797 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m17:16:19.573799 [info ] [Thread-1  ]: 1 of 3 START sql table model public.raw_data ................................... [RUN]
+[0m17:16:19.574745 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m17:16:19.574745 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m17:16:19.581925 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.583362 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m17:16:19.618281 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.619274 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.619274 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m17:16:19.619274 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:16:19.647037 [debug] [Thread-1  ]: SQL status: BEGIN in 0.028 seconds
+[0m17:16:19.648036 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.648912 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/raw_data.sql
+
+select *
+from "krisha_data"."public"."raw_flats"
+where price is not null
+  );
+  
+[0m17:16:19.652389 [debug] [Thread-1  ]: SQL status: SELECT 103 in 0.003 seconds
+[0m17:16:19.661639 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.661639 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public"."raw_data__dbt_tmp" rename to "raw_data"
+[0m17:16:19.662726 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:19.674918 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m17:16:19.675443 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.675443 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m17:16:19.676490 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:19.681489 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."raw_data__dbt_backup"
+[0m17:16:19.685496 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:19.685496 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+drop table if exists "krisha_data"."public"."raw_data__dbt_backup" cascade
+[0m17:16:19.686497 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m17:16:19.688493 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m17:16:19.691155 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6DB47A60>]}
+[0m17:16:19.692157 [info ] [Thread-1  ]: 1 of 3 OK created sql table model public.raw_data .............................. [[32mSELECT 103[0m in 0.12s]
+[0m17:16:19.693277 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m17:16:19.693277 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m17:16:19.694489 [info ] [Thread-1  ]: 2 of 3 START sql table model public.transform_data ............................. [RUN]
+[0m17:16:19.695530 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.krisha_data_pipeline.raw_data, now model.krisha_data_pipeline.transform_data)
+[0m17:16:19.695530 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.transform_data
+[0m17:16:19.698544 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.699544 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.transform_data
+[0m17:16:19.703815 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.704835 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.705414 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: BEGIN
+[0m17:16:19.705414 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:16:19.736298 [debug] [Thread-1  ]: SQL status: BEGIN in 0.030 seconds
+[0m17:16:19.737280 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.738277 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."transform_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/transform_data.sql
+
+select *
+from "krisha_data"."public"."raw_data"
+where price > 0
+  );
+  
+[0m17:16:19.742957 [debug] [Thread-1  ]: SQL status: SELECT 103 in 0.004 seconds
+[0m17:16:19.745976 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.745976 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public"."transform_data__dbt_tmp" rename to "transform_data"
+[0m17:16:19.746959 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:19.748959 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m17:16:19.748959 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.748959 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m17:16:19.750160 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:19.752166 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."transform_data__dbt_backup"
+[0m17:16:19.753166 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:19.754174 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+drop table if exists "krisha_data"."public"."transform_data__dbt_backup" cascade
+[0m17:16:19.754174 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m17:16:19.756169 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: Close
+[0m17:16:19.756169 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6DCFC280>]}
+[0m17:16:19.757167 [info ] [Thread-1  ]: 2 of 3 OK created sql table model public.transform_data ........................ [[32mSELECT 103[0m in 0.06s]
+[0m17:16:19.758240 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m17:16:19.759145 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.final_model
+[0m17:16:19.759641 [info ] [Thread-1  ]: 3 of 3 START sql table model public.final_model ................................ [RUN]
+[0m17:16:19.759641 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.krisha_data_pipeline.transform_data, now model.krisha_data_pipeline.final_model)
+[0m17:16:19.760664 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.final_model
+[0m17:16:19.762662 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.final_model"
+[0m17:16:19.763662 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.final_model
+[0m17:16:19.766837 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.final_model"
+[0m17:16:19.768242 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:19.768242 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: BEGIN
+[0m17:16:19.768242 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:16:19.798747 [debug] [Thread-1  ]: SQL status: BEGIN in 0.030 seconds
+[0m17:16:19.798747 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:19.799750 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."final_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/final_model.sql
+
+select *
+from "krisha_data"."public"."transform_data"
+  );
+  
+[0m17:16:19.803379 [debug] [Thread-1  ]: SQL status: SELECT 103 in 0.004 seconds
+[0m17:16:19.807384 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:19.808115 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public"."final_model__dbt_tmp" rename to "final_model"
+[0m17:16:19.808964 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:19.810006 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m17:16:19.811005 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:19.811005 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m17:16:19.812049 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:19.816215 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."final_model__dbt_backup"
+[0m17:16:19.817213 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:19.817213 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+drop table if exists "krisha_data"."public"."final_model__dbt_backup" cascade
+[0m17:16:19.818219 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m17:16:19.820213 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: Close
+[0m17:16:19.820213 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ad28c036-f154-436f-95e5-41e5d29e67bd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6DD6FA00>]}
+[0m17:16:19.821212 [info ] [Thread-1  ]: 3 of 3 OK created sql table model public.final_model ........................... [[32mSELECT 103[0m in 0.06s]
+[0m17:16:19.822522 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m17:16:19.823273 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.824291 [debug] [MainThread]: On master: BEGIN
+[0m17:16:19.824291 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:16:19.852498 [debug] [MainThread]: SQL status: BEGIN in 0.029 seconds
+[0m17:16:19.853509 [debug] [MainThread]: On master: COMMIT
+[0m17:16:19.853509 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:19.854507 [debug] [MainThread]: On master: COMMIT
+[0m17:16:19.854507 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:19.855498 [debug] [MainThread]: On master: Close
+[0m17:16:19.855498 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:16:19.855498 [debug] [MainThread]: Connection 'list_krisha_data' was properly closed.
+[0m17:16:19.856498 [debug] [MainThread]: Connection 'list_krisha_data_public' was properly closed.
+[0m17:16:19.857000 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.final_model' was properly closed.
+[0m17:16:19.857251 [info ] [MainThread]: 
+[0m17:16:19.858174 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.46 seconds (0.46s).
+[0m17:16:19.859432 [debug] [MainThread]: Command end result
+[0m17:16:19.876129 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:16:19.878019 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:16:19.883554 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m17:16:19.883554 [info ] [MainThread]: 
+[0m17:16:19.884548 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:16:19.886186 [info ] [MainThread]: 
+[0m17:16:19.886186 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m17:16:19.888214 [debug] [MainThread]: Command `dbt run` succeeded at 17:16:19.887246 after 1.51 seconds
+[0m17:16:19.888214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB69F495B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6A2B9BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001EB6B2C7BB0>]}
+[0m17:16:19.888214 [debug] [MainThread]: Flushing usage events
+[0m17:16:20.741139 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:16:51.785006 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D62CC9580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D64D50F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D64D50D60>]}
+
+
+============================== 17:16:51.788174 | b2ca7474-99f6-44f3-8582-5c5154f80417 ==============================
+[0m17:16:51.788174 [info ] [MainThread]: Running with dbt=1.9.4
+[0m17:16:51.789174 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\krisha_data_pipeline', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\krisha_data_pipeline\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:51.935685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D612E4F10>]}
+[0m17:16:51.980824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D6469A4C0>]}
+[0m17:16:51.981824 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m17:16:52.141729 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m17:16:52.258038 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:16:52.258038 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:16:52.292147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D652F6130>]}
+[0m17:16:52.358077 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:16:52.361078 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:16:52.374078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D65317CD0>]}
+[0m17:16:52.375078 [info ] [MainThread]: Found 3 models, 1 source, 433 macros
+[0m17:16:52.376070 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D65319970>]}
+[0m17:16:52.377078 [info ] [MainThread]: 
+[0m17:16:52.378072 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:16:52.378123 [info ] [MainThread]: 
+[0m17:16:52.379139 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:16:52.384154 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data'
+[0m17:16:52.481442 [debug] [ThreadPool]: Using postgres connection "list_krisha_data"
+[0m17:16:52.481442 [debug] [ThreadPool]: On list_krisha_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:16:52.482443 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:16:52.512595 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.030 seconds
+[0m17:16:52.513597 [debug] [ThreadPool]: On list_krisha_data: Close
+[0m17:16:52.515588 [debug] [ThreadPool]: Acquiring new postgres connection 'list_krisha_data_public'
+[0m17:16:52.521056 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:16:52.521056 [debug] [ThreadPool]: On list_krisha_data_public: BEGIN
+[0m17:16:52.522075 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:16:52.548725 [debug] [ThreadPool]: SQL status: BEGIN in 0.026 seconds
+[0m17:16:52.548725 [debug] [ThreadPool]: Using postgres connection "list_krisha_data_public"
+[0m17:16:52.548725 [debug] [ThreadPool]: On list_krisha_data_public: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "list_krisha_data_public"} */
+select
+      'krisha_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'krisha_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m17:16:52.551732 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.002 seconds
+[0m17:16:52.552821 [debug] [ThreadPool]: On list_krisha_data_public: ROLLBACK
+[0m17:16:52.553943 [debug] [ThreadPool]: On list_krisha_data_public: Close
+[0m17:16:52.558911 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:52.559919 [debug] [MainThread]: On master: BEGIN
+[0m17:16:52.559919 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:16:52.590969 [debug] [MainThread]: SQL status: BEGIN in 0.031 seconds
+[0m17:16:52.592038 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:52.592038 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m17:16:52.596033 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m17:16:52.597036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D6531F1F0>]}
+[0m17:16:52.597036 [debug] [MainThread]: On master: ROLLBACK
+[0m17:16:52.598041 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:52.598041 [debug] [MainThread]: On master: BEGIN
+[0m17:16:52.599104 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m17:16:52.599104 [debug] [MainThread]: On master: COMMIT
+[0m17:16:52.600149 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:52.600149 [debug] [MainThread]: On master: COMMIT
+[0m17:16:52.601174 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:52.601174 [debug] [MainThread]: On master: Close
+[0m17:16:52.605297 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.raw_data
+[0m17:16:52.606328 [info ] [Thread-1  ]: 1 of 3 START sql table model public.raw_data ................................... [RUN]
+[0m17:16:52.607387 [debug] [Thread-1  ]: Acquiring new postgres connection 'model.krisha_data_pipeline.raw_data'
+[0m17:16:52.607387 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.raw_data
+[0m17:16:52.614444 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.615156 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.raw_data
+[0m17:16:52.649339 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.650792 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.650792 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: BEGIN
+[0m17:16:52.651824 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m17:16:52.779775 [debug] [Thread-1  ]: SQL status: BEGIN in 0.128 seconds
+[0m17:16:52.780771 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.780771 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."raw_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/raw_data.sql
+
+select *
+from "krisha_data"."public"."raw_flats"
+where price is not null
+  );
+  
+[0m17:16:52.784344 [debug] [Thread-1  ]: SQL status: SELECT 102 in 0.003 seconds
+[0m17:16:52.795720 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.795720 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public"."raw_data" rename to "raw_data__dbt_backup"
+[0m17:16:52.796717 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.799712 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.800722 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+alter table "krisha_data"."public"."raw_data__dbt_tmp" rename to "raw_data"
+[0m17:16:52.801711 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.813816 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m17:16:52.814818 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.814818 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: COMMIT
+[0m17:16:52.815818 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m17:16:52.820818 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."raw_data__dbt_backup"
+[0m17:16:52.824818 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.raw_data"
+[0m17:16:52.824818 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.raw_data"} */
+drop table if exists "krisha_data"."public"."raw_data__dbt_backup" cascade
+[0m17:16:52.826816 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m17:16:52.828818 [debug] [Thread-1  ]: On model.krisha_data_pipeline.raw_data: Close
+[0m17:16:52.830818 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D657AB7C0>]}
+[0m17:16:52.831282 [info ] [Thread-1  ]: 1 of 3 OK created sql table model public.raw_data .............................. [[32mSELECT 102[0m in 0.22s]
+[0m17:16:52.832319 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.raw_data
+[0m17:16:52.833359 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.transform_data
+[0m17:16:52.834567 [info ] [Thread-1  ]: 2 of 3 START sql table model public.transform_data ............................. [RUN]
+[0m17:16:52.835565 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.krisha_data_pipeline.raw_data, now model.krisha_data_pipeline.transform_data)
+[0m17:16:52.835565 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.transform_data
+[0m17:16:52.838639 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.839642 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.transform_data
+[0m17:16:52.842565 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.843628 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.843628 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: BEGIN
+[0m17:16:52.844564 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:16:52.872649 [debug] [Thread-1  ]: SQL status: BEGIN in 0.028 seconds
+[0m17:16:52.873643 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.873643 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."transform_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/transform_data.sql
+
+select *
+from "krisha_data"."public"."raw_data"
+where price > 0
+  );
+  
+[0m17:16:52.878499 [debug] [Thread-1  ]: SQL status: SELECT 102 in 0.004 seconds
+[0m17:16:52.883702 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.883702 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public"."transform_data" rename to "transform_data__dbt_backup"
+[0m17:16:52.884694 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.887700 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.887700 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+alter table "krisha_data"."public"."transform_data__dbt_tmp" rename to "transform_data"
+[0m17:16:52.888698 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.890697 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m17:16:52.890697 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.890697 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: COMMIT
+[0m17:16:52.891697 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:52.894697 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."transform_data__dbt_backup"
+[0m17:16:52.895662 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.transform_data"
+[0m17:16:52.896162 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.transform_data"} */
+drop table if exists "krisha_data"."public"."transform_data__dbt_backup" cascade
+[0m17:16:52.897663 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m17:16:52.898594 [debug] [Thread-1  ]: On model.krisha_data_pipeline.transform_data: Close
+[0m17:16:52.899594 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D62BBEEE0>]}
+[0m17:16:52.900594 [info ] [Thread-1  ]: 2 of 3 OK created sql table model public.transform_data ........................ [[32mSELECT 102[0m in 0.07s]
+[0m17:16:52.901304 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.transform_data
+[0m17:16:52.902344 [debug] [Thread-1  ]: Began running node model.krisha_data_pipeline.final_model
+[0m17:16:52.902344 [info ] [Thread-1  ]: 3 of 3 START sql table model public.final_model ................................ [RUN]
+[0m17:16:52.903362 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.krisha_data_pipeline.transform_data, now model.krisha_data_pipeline.final_model)
+[0m17:16:52.903362 [debug] [Thread-1  ]: Began compiling node model.krisha_data_pipeline.final_model
+[0m17:16:52.906364 [debug] [Thread-1  ]: Writing injected SQL for node "model.krisha_data_pipeline.final_model"
+[0m17:16:52.907364 [debug] [Thread-1  ]: Began executing node model.krisha_data_pipeline.final_model
+[0m17:16:52.910363 [debug] [Thread-1  ]: Writing runtime sql for node "model.krisha_data_pipeline.final_model"
+[0m17:16:52.911362 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.911997 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: BEGIN
+[0m17:16:52.911997 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:16:52.940204 [debug] [Thread-1  ]: SQL status: BEGIN in 0.028 seconds
+[0m17:16:52.941284 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.941642 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+
+  
+    
+
+  create  table "krisha_data"."public"."final_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- models/final_model.sql
+
+select *
+from "krisha_data"."public"."transform_data"
+  );
+  
+[0m17:16:52.946747 [debug] [Thread-1  ]: SQL status: SELECT 102 in 0.005 seconds
+[0m17:16:52.950748 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.950748 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public"."final_model" rename to "final_model__dbt_backup"
+[0m17:16:52.951747 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.954823 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.955826 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+alter table "krisha_data"."public"."final_model__dbt_tmp" rename to "final_model"
+[0m17:16:52.956749 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:16:52.957751 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m17:16:52.958751 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.958751 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: COMMIT
+[0m17:16:52.959750 [debug] [Thread-1  ]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:52.962751 [debug] [Thread-1  ]: Applying DROP to: "krisha_data"."public"."final_model__dbt_backup"
+[0m17:16:52.963751 [debug] [Thread-1  ]: Using postgres connection "model.krisha_data_pipeline.final_model"
+[0m17:16:52.963751 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "krisha_profile", "target_name": "dev", "node_id": "model.krisha_data_pipeline.final_model"} */
+drop table if exists "krisha_data"."public"."final_model__dbt_backup" cascade
+[0m17:16:52.965819 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m17:16:52.966752 [debug] [Thread-1  ]: On model.krisha_data_pipeline.final_model: Close
+[0m17:16:52.967751 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2ca7474-99f6-44f3-8582-5c5154f80417', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D658FCFD0>]}
+[0m17:16:52.968752 [info ] [Thread-1  ]: 3 of 3 OK created sql table model public.final_model ........................... [[32mSELECT 102[0m in 0.06s]
+[0m17:16:52.969754 [debug] [Thread-1  ]: Finished running node model.krisha_data_pipeline.final_model
+[0m17:16:52.970065 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:52.971088 [debug] [MainThread]: On master: BEGIN
+[0m17:16:52.971088 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:16:52.999424 [debug] [MainThread]: SQL status: BEGIN in 0.028 seconds
+[0m17:16:52.999424 [debug] [MainThread]: On master: COMMIT
+[0m17:16:53.000415 [debug] [MainThread]: Using postgres connection "master"
+[0m17:16:53.000415 [debug] [MainThread]: On master: COMMIT
+[0m17:16:53.001415 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:16:53.001415 [debug] [MainThread]: On master: Close
+[0m17:16:53.002449 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:16:53.003218 [debug] [MainThread]: Connection 'list_krisha_data' was properly closed.
+[0m17:16:53.003344 [debug] [MainThread]: Connection 'list_krisha_data_public' was properly closed.
+[0m17:16:53.003344 [debug] [MainThread]: Connection 'model.krisha_data_pipeline.final_model' was properly closed.
+[0m17:16:53.004128 [info ] [MainThread]: 
+[0m17:16:53.005239 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.63 seconds (0.63s).
+[0m17:16:53.006308 [debug] [MainThread]: Command end result
+[0m17:16:53.023641 [debug] [MainThread]: Wrote artifact WritableManifest to C:\krisha_data_pipeline\target\manifest.json
+[0m17:16:53.026575 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\krisha_data_pipeline\target\semantic_manifest.json
+[0m17:16:53.031584 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\krisha_data_pipeline\target\run_results.json
+[0m17:16:53.032574 [info ] [MainThread]: 
+[0m17:16:53.033621 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:16:53.033621 [info ] [MainThread]: 
+[0m17:16:53.034981 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m17:16:53.036210 [debug] [MainThread]: Command `dbt run` succeeded at 17:16:53.036210 after 1.31 seconds
+[0m17:16:53.037211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D62CC9580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D65317040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D62FE49D0>]}
+[0m17:16:53.037211 [debug] [MainThread]: Flushing usage events
+[0m17:16:53.737890 [debug] [MainThread]: An error was encountered while trying to flush usage events

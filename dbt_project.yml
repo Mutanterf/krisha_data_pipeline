@@ -1,0 +1,14 @@
+name: 'krisha_data_pipeline'
+version: '1.0'
+config-version: 2
+
+profile: 'krisha_profile'
+
+models:
+  krisha_data_pipeline:
+    raw_data:
+      +materialized: table
+    transform_data:
+      +materialized: table
+    final_model:
+      +materialized: table
