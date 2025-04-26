@@ -8,24 +8,6 @@ A simple end‑to‑end data pipeline that:
 
 ---
 
-## 📂 Repository Structure
-
-```
-krisha_data_pipeline/
-├── data_parse.py          # Scraper + loader logic
-├── run_pipeline.py        # Orchestration script (scrape → load → dbt)
-├── dbt_project.yml        # dbt project configuration
-├── models/                # dbt SQL models
-│   ├── raw_data.sql       # Materializes raw table from Postgres
-│   ├── transform_data.sql # Cleans & filters raw data
-│   └── final_model.sql    # Final aggregated output
-├── chromedriver-win64/    # Chromedriver executable (Windows)
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
-```
-
----
-
 ## 🚀 Prerequisites
 
 Before you begin, ensure you have the following installed:
@@ -45,19 +27,10 @@ Before you begin, ensure you have the following installed:
    cd krisha_data_pipeline
    ```
 
-2. Create & activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate     # macOS/Linux
-   venv\Scripts\activate.bat  # Windows
-   ```
+2. Install Python dependencies:
 
-3. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-4. Install dbt and the Postgres adapter:
+3. Install dbt and the Postgres adapter:
    ```bash
    pip install dbt-core dbt-postgres
    ```
@@ -136,13 +109,5 @@ SELECT * FROM public.final_model LIMIT 10;
 
 ---
 
-## 🤝 Contributing
 
-Feel free to open issues or submit pull requests.
-
----
-
-## 📝 License
-
-MIT © [Mutanterf](https://github.com/Mutanterf)
 
