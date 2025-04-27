@@ -11,7 +11,7 @@ import re
 
 PG = {
     "user": os.getenv("PG_USER","postgres"),
-    "pw":   os.getenv("PG_PASSWORD","dimashprpr"),
+    "pw":   os.getenv("PG_PASSWORD","Mika2u7w"),
     "host": os.getenv("PG_HOST","localhost"),
     "port": os.getenv("PG_PORT","5432"),
     "db":   os.getenv("PG_DB","krisha_data"),
