@@ -1,15 +1,55 @@
 version: 2
 
 sources:
-  - name: raw_data         
-    schema: public           
+  - name: raw_data
+    schema: public
     tables:
       - name: raw_flats
 
 models:
   - name: raw_data
-    description: "Pull in raw_flats and drop null prices"
+    description: "Импортируем данные из raw_flats, где есть все объявления"
+
   - name: transform_data
-    description: "Filter out bad prices"
+    description: "Фильтруем плохие цены и обогащаем данные макросами"
+    columns:
+      - name: id
+        description: "Идентификатор квартиры"
+        tests:
+          - not_null
+          - unique
+
+      - name: rounded_price
+        description: "Округлённая цена квартиры"
+        tests:
+          - not_null
+
+      - name: address
+        description: "Адрес квартиры"
+
+      - name: property_type
+        description: "Тип недвижимости, определённый автоматически"
+
+      - name: standardized_date
+        description: "Дата создания объявления в стандартизированном формате"
+
+      - name: is_weekend
+        description: "Показатель, было ли объявление размещено в выходной"
+
+      - name: area
+        description: "Площадь квартиры в квадратных метрах"
+
+      - name: rooms
+        description: "Количество комнат"
+
+      - name: floor
+        description: "Этаж квартиры"
+
+      - name: total_floors
+        description: "Общее количество этажей в доме"
+
+      - name: description
+        description: "Описание квартиры"
+
   - name: final_model
-    description: "Final cleaned flats"
+    description: "Финальная чистая таблица квартир"

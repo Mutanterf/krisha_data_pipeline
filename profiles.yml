@@ -5,7 +5,7 @@ krisha_profile:
       type: postgres
       host: localhost
       user: postgres
-      pass: Mika2u7w
+      pass: dimashprpr
       port: 5432
       dbname: krisha_data
       schema: public
